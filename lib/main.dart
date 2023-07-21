@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'pages/init_page.dart';
 import 'pages/initial_page.dart';
 import 'pages/login_page.dart';
+import 'pages/main_page.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin(); // 전역 변수로 설정

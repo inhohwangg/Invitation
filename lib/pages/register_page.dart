@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_project_tictok/controller/register_controller.dart';
+import 'package:flutter_clone_project_tictok/pages/initial_page.dart';
 import 'package:flutter_clone_project_tictok/pages/login_page.dart';
 import 'package:flutter_clone_project_tictok/pages/register_success_page.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+
+import 'init_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -124,11 +127,12 @@ class _RegisterPageState extends State<RegisterPage> {
               // ),
               GestureDetector(
                 onTap: () {
-                  controller.register(
-                    registerName.text,
-                    registerUserId.text,
-                    registerPassword.text,
-                  );
+                  Get.to(RegisterSuccessPage());
+                  // controller.register(
+                  //   registerName.text,
+                  //   registerUserId.text,
+                  //   registerPassword.text,
+                  // );
                 },
                 child: Container(
                   decoration: BoxDecoration(

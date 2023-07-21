@@ -8,6 +8,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:pocketbase/pocketbase.dart';
 
 class MainPageController extends GetxController {
+  RxBool firstQuestion = false.obs;
+  RxBool keyboardEvent = false.obs;
   List imageArray = [
     'https://source.unsplash.com/user/max_duz/300x300',
     'https://source.unsplash.com/random/?programming',

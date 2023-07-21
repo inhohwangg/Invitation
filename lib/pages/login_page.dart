@@ -86,7 +86,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  controller.login(userId.text, password.text);
+                  Get.to(MainPage());
+                  // controller.login(userId.text, password.text);
                 },
                 child: Container(
                   decoration: BoxDecoration(
