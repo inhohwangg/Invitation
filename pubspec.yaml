@@ -1,0 +1,63 @@
+name: flutter_clone_project_tictok
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  pocketbase: ^0.10.3
+  dio: ^5.2.1+1
+  get: ^4.6.5
+  get_storage: ^2.1.1
+  image_picker: ^1.0.1
+  flutter_local_notifications: ^15.1.0+1
+  carousel_slider: ^4.2.1
+  dots_indicator: ^3.0.0
+  google_fonts: ^4.0.4
+  delayed_display: ^2.0.0
+  lottie: ^2.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/image/
+    - assets/image/init_image.json
+    - assets/image/init_image2.json
+    - assets/image/login_image.json
+    - assets/image/login_page_image.json
+    - assets/image/register_success_image.json
+    - assets/image/register_page_image.json
+    - assets/image/wedding_image.json
+
+  #   - images/a_dot_ham.jpeg
+
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
