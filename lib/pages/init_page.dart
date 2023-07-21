@@ -35,7 +35,7 @@ class InitPage extends StatelessWidget {
                     "쉽고 빠르게 멋진 청첩장을 만들어보세요",
                     style: GoogleFonts.doHyeon(
                       color: Colors.black,
-                      fontSize: 25,
+                      fontSize: 23,
                     ),
                   ),
                 ),

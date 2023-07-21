@@ -3,14 +3,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter_clone_project_tictok/controller/main_page_controller.dart';
 import 'package:get/get.dart';
 
-class PostPage extends StatefulWidget {
-  const PostPage({super.key});
+class SecondQuestionPage extends StatefulWidget {
+  const SecondQuestionPage({super.key});
 
   @override
-  State<PostPage> createState() => _PostPageState();
+  State<SecondQuestionPage> createState() => _SecondQuestionPageState();
 }
 
-class _PostPageState extends State<PostPage> with WidgetsBindingObserver {
+class _SecondQuestionPageState extends State<SecondQuestionPage>
+    with WidgetsBindingObserver {
   MainPageController controller = Get.put(MainPageController());
   bool keyboardEvent = false;
   late FocusNode focusNode;
@@ -67,7 +68,7 @@ class _PostPageState extends State<PostPage> with WidgetsBindingObserver {
                   children: [
                     SizedBox(
                       child: Text(
-                        '신랑의 이름을 입력해주세요',
+                        '신부의 이름을 입력해주세요',
                         style: TextStyle(
                           fontSize: MediaQuery.of(context).size.width * 0.075,
                           color: Colors.white,
@@ -84,7 +85,7 @@ class _PostPageState extends State<PostPage> with WidgetsBindingObserver {
                         decoration: InputDecoration(
                           prefixIconColor: Colors.white,
                           suffixIconColor: Colors.white,
-                          hintText: '신랑 이름',
+                          hintText: '신부 이름',
                           hintStyle: TextStyle(
                             fontSize: 20,
                             color: Colors.grey[600],

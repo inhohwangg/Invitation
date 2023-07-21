@@ -73,7 +73,7 @@ class _InitialPageState extends State<InitialPage> {
                       },
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.35,
-                        height: MediaQuery.of(context).size.height * 0.065,
+                        height: MediaQuery.of(context).size.height * 0.075,
                         decoration: BoxDecoration(
                           color: Colors.amber[700],
                           borderRadius: BorderRadius.circular(10),

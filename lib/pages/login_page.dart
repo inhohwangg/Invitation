@@ -86,7 +86,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(MainPage());
+                  Get.to(
+                    MainPage(),
+                    transition: Transition.fadeIn,
+                    duration: Duration(
+                      milliseconds: 500,
+                    ),
+                  );
                   // controller.login(userId.text, password.text);
                 },
                 child: Container(
@@ -118,7 +124,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Get.to(RegisterPage());
+                      Get.to(
+                        RegisterPage(),
+                        transition: Transition.rightToLeft,
+                        duration: Duration(
+                          milliseconds: 500,
+                        ),
+                      );
                       // Get.to(MainPage(),
                       //     arguments: [userId.text, password.text]);
                     },

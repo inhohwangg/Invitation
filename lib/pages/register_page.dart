@@ -35,7 +35,7 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Lottie.asset('assets/image/register_page_image.json',
-                  height: 400),
+                  height: 300),
               SizedBox(
                 height: 10,
               ),
@@ -163,7 +163,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Get.to(LoginPage());
+                      Get.to(
+                        LoginPage(),
+                        transition: Transition.leftToRight,
+                        duration: Duration(
+                          milliseconds: 500,
+                        ),
+                      );
                     },
                     child: Text(
                       '로그인',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'post_page.dart';
+import 'first_question_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,7 +19,13 @@ class _HomePageState extends State<HomePage> {
         children: [
           GestureDetector(
             onTap: () {
-              Get.to(PostPage());
+              Get.to(
+                FirstQuestionPage(),
+                transition: Transition.downToUp,
+                duration: Duration(
+                  milliseconds: 500,
+                ),
+              );
             },
             child: Center(
               child: Container(
