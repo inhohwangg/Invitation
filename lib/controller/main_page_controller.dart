@@ -15,7 +15,7 @@ class MainPageController extends GetxController {
     'https://source.unsplash.com/random/?programming',
     'https://source.unsplash.com/random/300x300/?programming'
   ];
-  final pb = PocketBase('http://172.30.1.52:8090');
+  final pb = PocketBase('http://211.46.20.30:8090');
 
   @override
   void onInit() {
@@ -54,7 +54,7 @@ class MainPageController extends GetxController {
 
       dio.Dio dioClient = dio.Dio();
       final response = await dioClient.post(
-        "http://172.30.1.52:8090/api/collections/video/records",
+        "http://211.46.20.30:8090/api/collections/video/records",
         data: formData,
         // options: dio.Options(
         //   headers: {

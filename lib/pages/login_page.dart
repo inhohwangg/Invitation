@@ -86,14 +86,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(
-                    MainPage(),
-                    transition: Transition.fadeIn,
-                    duration: Duration(
-                      milliseconds: 500,
-                    ),
-                  );
-                  // controller.login(userId.text, password.text);
+                  controller.login(userId.text, password.text);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -131,8 +124,6 @@ class _LoginPageState extends State<LoginPage> {
                           milliseconds: 500,
                         ),
                       );
-                      // Get.to(MainPage(),
-                      //     arguments: [userId.text, password.text]);
                     },
                     child: Text(
                       '회원가입',

@@ -1,12 +1,10 @@
-import 'dart:developer';
-
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'register_controller.dart';
 
 class InitialPageController extends GetxController {
-  String baseUrl = 'http://172.30.1.52:8090';
+  String baseUrl = 'http://211.46.20.30:8090';
   RxList imageArray = [].obs;
 
   @override

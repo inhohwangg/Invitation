@@ -46,6 +46,7 @@ flutter:
     - assets/image/register_success_image.json
     - assets/image/register_page_image.json
     - assets/image/wedding_image.json
+    - assets/image/No_Image_Available.jpg
 
   #   - images/a_dot_ham.jpeg
 

@@ -14,14 +14,12 @@ Dio dio = Dio(BaseOptions(
   validateStatus: (status) => true,
 ));
 
-final pb = PocketBase('http://172.30.1.52:8090/');
+final pb = PocketBase('http://211.46.20.30:8090/');
 
 class RegisterController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    // await login();
-    // register();
   }
 
   // 회원가입 기능
@@ -45,6 +43,13 @@ class RegisterController extends GetxController {
 // (optional) send an email verification request
       await pb.collection('users').requestVerification(userId);
       Get.snackbar('회원가입 성공!', '회원가입에 성공했습니다.');
+      Get.to(
+        RegisterSuccessPage(),
+        transition: Transition.fadeIn,
+        duration: Duration(
+          milliseconds: 500,
+        ),
+      );
     } catch (e) {
       print(e);
       Get.snackbar('회원가입 실패!', '회원가입이 실패했습니다');
@@ -53,6 +58,7 @@ class RegisterController extends GetxController {
 
   // 로그인 기능
   login(userId, password) async {
+    print('?!');
     try {
       final res = await pb.collection('users').authWithPassword(
             userId,
@@ -67,6 +73,13 @@ class RegisterController extends GetxController {
       Get.to(MainPage());
       Get.snackbar('로그인 성공', '환영합니다!',
           backgroundColor: Colors.blue[200], colorText: Colors.white);
+      Get.to(
+        MainPage(),
+        transition: Transition.fadeIn,
+        duration: Duration(
+          milliseconds: 500,
+        ),
+      );
     } catch (e) {
       print(e);
       Get.snackbar('로그인 실패!', '아이디와 비밀번호를 확인해주세요',

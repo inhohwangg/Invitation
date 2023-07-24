@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clone_project_tictok/controller/invate_post_controller.dart';
+import 'package:flutter_clone_project_tictok/pages/example_page.dart';
 import 'package:get/get.dart';
 
 import 'first_question_page.dart';
+import 'invate_post_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,6 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  InvatePostController controller = Get.put(InvatePostController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +24,8 @@ class _HomePageState extends State<HomePage> {
           GestureDetector(
             onTap: () {
               Get.to(
-                FirstQuestionPage(),
+                InvatePostPage(),
+                // FirstQuestionPage(),
                 transition: Transition.downToUp,
                 duration: Duration(
                   milliseconds: 500,
@@ -40,6 +45,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(ExamplePage());
+            },
+            child: Text(
+              'Example',
             ),
           ),
         ],
