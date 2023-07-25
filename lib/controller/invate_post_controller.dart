@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class InvatePostController extends GetxController {
+  RxList invateDataList = [].obs;
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -12,7 +14,7 @@ class InvatePostController extends GetxController {
     invateData();
   }
 
-  final String baseUrl = 'http://211.46.20.30:8090';
+  final String baseUrl = 'http://218.152.159.98:8090';
   Dio dio = Dio(BaseOptions(
     contentType: Headers.formUrlEncodedContentType,
     validateStatus: (status) => true,
@@ -28,6 +30,37 @@ class InvatePostController extends GetxController {
         },
       ),
     );
-    inspect(res.data);
+    for (int i = 0; i < res.data['items'].length; i++) {
+      invateDataList.add({
+        'attendanceMessage': res.data['items'][i]['attendanceMessage'],
+        'brideBankAccount': res.data['items'][i]['brideBankAccount'],
+        'brideFatherName': res.data['items'][i]['brideFatherName'],
+        'brideMotherName': res.data['items'][i]['brideMotherName'],
+        'brideName': res.data['items'][i]['brideName'],
+        'busInfo': res.data['items'][i]['busInfo'],
+        'collectionId': res.data['items'][i]['collectionId'],
+        'collectionName': res.data['items'][i]['collectionName'],
+        'galleryImage': res.data['items'][i]['galleryImage'],
+        'groomBankAccount': res.data['items'][i]['groomBankAccount'],
+        'groomFatherName': res.data['items'][i]['groomFatherName'],
+        'groomMotherName': res.data['items'][i]['groomMotherName'],
+        'groomName': res.data['items'][i]['groomName'],
+        'invateImage':
+            '$baseUrl/api/files/${res.data['items'][i]['collectionId']}/${res.data['items'][i]['id']}/${res.data['items'][i]['invateImage']}',
+        'invitationMessage': res.data['items'][i]['invitationMessage'],
+        'mainImage':
+            '$baseUrl/api/files/${res.data['items'][i]['collectionId']}/${res.data['items'][i]['id']}/${res.data['items'][i]['mainImage']}',
+        'parkingInfomation': res.data['items'][i]['parkingInfomation'],
+        'subwayInfo': res.data['items'][i]['subwayInfo'],
+        'weddingDate': res.data['items'][i]['weddingDate'],
+        'weddingVenueNewAddress': res.data['items'][i]
+            ['weddingVenueNewAddress'],
+        'weddingVenueOldAddress': res.data['items'][i]
+            ['weddingVenueOldAddress'],
+        'weddingDayOfWeek': res.data['items'][i]['weddingDayOfWeek'],
+        'weddingTime': res.data['items'][i]['weddingTime'],
+        'weddingVenue': res.data['items'][i]['weddingVenue'],
+      });
+    }
   }
 }

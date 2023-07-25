@@ -14,7 +14,7 @@ Dio dio = Dio(BaseOptions(
   validateStatus: (status) => true,
 ));
 
-final pb = PocketBase('http://211.46.20.30:8090/');
+final pb = PocketBase('http://218.152.159.98:8090/');
 
 class RegisterController extends GetxController {
   @override

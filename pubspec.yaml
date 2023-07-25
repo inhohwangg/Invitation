@@ -25,6 +25,7 @@ dependencies:
   delayed_display: ^2.0.0
   lottie: ^2.5.0
   flutter_map: ^4.0.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
