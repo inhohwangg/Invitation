@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -8,11 +9,13 @@ import 'pages/init_page.dart';
 import 'pages/initial_page.dart';
 import 'pages/login_page.dart';
 import 'pages/main_page.dart';
+import 'pages/maplibre_test_page.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin(); // 전역 변수로 설정
 
 void main() async {
+  await dotenv.load(fileName: ".env");
   await GetStorage.init();
 
   const AndroidInitializationSettings initializationSettingsAndroid =
@@ -61,7 +64,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: InitPage(),
+      home: MapLibreTestPage(),
+      // home: InitPage(),
     );
   }
 }
