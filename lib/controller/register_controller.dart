@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_clone_project_tictok/pages/login_page.dart';
 import 'package:flutter_clone_project_tictok/pages/main_page.dart';
 import 'package:flutter_clone_project_tictok/pages/register_success_page.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:pocketbase/pocketbase.dart';
@@ -14,7 +15,7 @@ Dio dio = Dio(BaseOptions(
   validateStatus: (status) => true,
 ));
 
-final pb = PocketBase('http://218.152.159.98:8090/');
+final pb = PocketBase(dotenv.env['POCKETBASE_LINK'].toString());
 
 class RegisterController extends GetxController {
   @override

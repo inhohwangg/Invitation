@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -14,7 +15,7 @@ class InvatePostController extends GetxController {
     invateData();
   }
 
-  final String baseUrl = 'http://218.152.159.98:8090';
+  final String baseUrl = dotenv.env['POCKETBASE_LINK'].toString();
   Dio dio = Dio(BaseOptions(
     contentType: Headers.formUrlEncodedContentType,
     validateStatus: (status) => true,

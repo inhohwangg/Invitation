@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart' as dio;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pocketbase/pocketbase.dart';
@@ -15,7 +16,7 @@ class MainPageController extends GetxController {
     'https://source.unsplash.com/random/?programming',
     'https://source.unsplash.com/random/300x300/?programming'
   ];
-  final pb = PocketBase('http://218.152.159.98:8090');
+  final pb = PocketBase(dotenv.env['POCKETBASE_LINK'].toString());
 
   @override
   void onInit() {
@@ -54,7 +55,7 @@ class MainPageController extends GetxController {
 
       dio.Dio dioClient = dio.Dio();
       final response = await dioClient.post(
-        "http://218.152.159.98:8090/api/collections/video/records",
+        "${dotenv.env['POCKETBASE_LINK'].toString()}/api/collections/video/records",
         data: formData,
         // options: dio.Options(
         //   headers: {
