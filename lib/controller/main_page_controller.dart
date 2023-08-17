@@ -16,7 +16,8 @@ class MainPageController extends GetxController {
     'https://source.unsplash.com/random/?programming',
     'https://source.unsplash.com/random/300x300/?programming'
   ];
-  final pb = PocketBase(dotenv.env['POCKETBASE_LINK'].toString());
+  final pb = 'http://121.130.161.155';
+  // PocketBase(dotenv.env['POCKETBASE_LINK'].toString());
 
   @override
   void onInit() {
@@ -55,7 +56,7 @@ class MainPageController extends GetxController {
 
       dio.Dio dioClient = dio.Dio();
       final response = await dioClient.post(
-        "${dotenv.env['POCKETBASE_LINK'].toString()}/api/collections/video/records",
+        "$pb/api/collections/video/records",
         data: formData,
         // options: dio.Options(
         //   headers: {

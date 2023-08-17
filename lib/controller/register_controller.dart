@@ -15,7 +15,7 @@ Dio dio = Dio(BaseOptions(
   validateStatus: (status) => true,
 ));
 
-final pb = PocketBase(dotenv.env['POCKETBASE_LINK'].toString());
+final pb = PocketBase('http://121.130.161.155');
 
 class RegisterController extends GetxController {
   @override

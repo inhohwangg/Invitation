@@ -5,7 +5,8 @@ import 'package:get_storage/get_storage.dart';
 import 'register_controller.dart';
 
 class InitialPageController extends GetxController {
-  String baseUrl = dotenv.env['POCKETBASE_LINK'].toString();
+  String baseUrl = 'http://121.130.161.155';
+  // dotenv.env['POCKETBASE_LINK'].toString();
   RxList imageArray = [].obs;
 
   @override

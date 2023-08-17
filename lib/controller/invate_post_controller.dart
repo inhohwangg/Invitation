@@ -15,7 +15,8 @@ class InvatePostController extends GetxController {
     invateData();
   }
 
-  final String baseUrl = dotenv.env['POCKETBASE_LINK'].toString();
+  // final String baseUrl = dotenv.env['POCKETBASE_LINK'].toString();
+  String baseUrl = 'http://121.130.161.155';
   Dio dio = Dio(BaseOptions(
     contentType: Headers.formUrlEncodedContentType,
     validateStatus: (status) => true,
