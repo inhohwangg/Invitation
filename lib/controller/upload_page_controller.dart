@@ -10,6 +10,7 @@ import 'register_controller.dart';
 
 class UploadController extends GetxController {
   late Rx<File?> pickFile;
+  List resultList = [];
 
   // captureImageCamera() async {
   //   final pickedImageFile =
@@ -70,7 +71,25 @@ class UploadController extends GetxController {
   }
 
   gelleryImageTest() async {
-    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
-    print(pickedFile);
+    final pickFile = await ImagePicker().pickMultiImage();
+
+    List multiPartFiles = [];
+    for (int i = 0; i < pickFile.length; i++) {
+      MultipartFile multipartFile = await MultipartFile.fromFile(pickFile[i].path);
+      multiPartFiles.add(multipartFile);
+    }
+    FormData formData = FormData.fromMap({
+      'subImg': multiPartFiles
+    });
+    var res = await dio.post(
+      'http://121.130.161.155:8090/api/collections/wedding_post/records',
+      options: Options(
+        headers: {
+          'Authorization': GetStorage().read('token'),
+        },
+      ),
+      data: formData
+    );
+    inspect(res.data);
   }
 }
