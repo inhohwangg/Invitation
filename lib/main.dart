@@ -1,16 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_clone_project_tictok/pages/image_file_test.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'pages/init_page.dart';
-import 'pages/initial_page.dart';
-import 'pages/login_page.dart';
-import 'pages/main_page.dart';
-import 'pages/maplibre_test_page.dart';
+import 'pages/cover_page.dart';
+import 'pages/my_page.dart';
+import 'widget/global.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin(); // 전역 변수로 설정
@@ -38,7 +34,21 @@ void main() async {
       'This is an important message', platformChannelSpecifics,
       payload: 'item x');
   HttpOverrides.global = NoCheckCertificateHttpOverrides();
-  runApp(MyApp());
+  getToken() async {
+    var res = await dio.post(
+      '$baseUrl/api/admins/auth-with-password',
+      data: {
+        'identity': 'gractor@gractor.com',
+        'password': '#Gractor1234',
+      },
+    );
+    GetStorage().write('token', res.data['token']);
+  }
+
+  getToken();
+  runApp(
+    MyApp(),
+  );
 }
 
 class NoCheckCertificateHttpOverrides extends HttpOverrides {
@@ -65,8 +75,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // home: MapLibreTestPage(),
-      home: ImageFileTest(),
+      // InitPage
+      home: MyPage(),
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
+import 'home_page.dart';
 import 'main_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -86,7 +87,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  controller.login(userId.text, password.text);
+                  Get.to(HomePage());
+                  // controller.login(userId.text, password.text);
                 },
                 child: Container(
                   decoration: BoxDecoration(

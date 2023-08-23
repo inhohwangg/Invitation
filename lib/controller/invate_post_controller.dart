@@ -1,9 +1,8 @@
-import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+
+import '../widget/global.dart';
 
 class InvatePostController extends GetxController {
   RxList invateDataList = [].obs;
@@ -15,12 +14,6 @@ class InvatePostController extends GetxController {
     invateData();
   }
 
-  // final String baseUrl = dotenv.env['POCKETBASE_LINK'].toString();
-  String baseUrl = 'http://121.130.161.155';
-  Dio dio = Dio(BaseOptions(
-    contentType: Headers.formUrlEncodedContentType,
-    validateStatus: (status) => true,
-  ));
 
   invateData() async {
     var res = await dio.get(

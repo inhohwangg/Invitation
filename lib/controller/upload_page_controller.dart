@@ -6,7 +6,7 @@ import 'package:get/get.dart' hide MultipartFile, FormData;
 import 'package:get_storage/get_storage.dart';
 import 'package:image_picker/image_picker.dart';
 
-import 'register_controller.dart';
+import '../widget/global.dart';
 
 class UploadController extends GetxController {
   late Rx<File?> pickFile;
@@ -21,20 +21,19 @@ class UploadController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    await getToken();
     // await imageTest();
   }
 
-  getToken() async {
-    var res = await dio.post(
-      'http://121.130.161.155:8090/api/admins/auth-with-password',
-      data: {
-        'identity': 'gractor@gractor.com',
-        'password': '#Gractor1234',
-      },
-    );
-    GetStorage().write('token', res.data['token']);
-  }
+  // getToken() async {
+  //   var res = await dio.post(
+  //     '$baseUrl/api/admins/auth-with-password',
+  //     data: {
+  //       'identity': 'gractor@gractor.com',
+  //       'password': '#Gractor1234',
+  //     },
+  //   );
+  //   GetStorage().write('token', res.data['token']);
+  // }
 
   cameraImageTest() async {
     final pickedImagFile =
@@ -58,7 +57,7 @@ class UploadController extends GetxController {
       pickFile = Rx<File?>(File(pickedImagFile!.path));
       inspect(pickFile);
       var res = await dio.post(
-        'http://121.130.161.155:8090/api/collections/wedding_post/records',
+        '$baseUrl/api/collections/wedding_post/records',
         options: Options(
           headers: {
             'Authorization': GetStorage().read('token'),
@@ -82,7 +81,7 @@ class UploadController extends GetxController {
       'subImg': multiPartFiles
     });
     var res = await dio.post(
-      'http://121.130.161.155:8090/api/collections/wedding_post/records',
+      '$baseUrl/api/collections/wedding_post/records',
       options: Options(
         headers: {
           'Authorization': GetStorage().read('token'),

@@ -3,21 +3,14 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart' as dio;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:pocketbase/pocketbase.dart';
+
+import '../widget/global.dart';
 
 class MainPageController extends GetxController {
   RxBool firstQuestion = false.obs;
   RxBool keyboardEvent = false.obs;
-  List imageArray = [
-    'https://source.unsplash.com/user/max_duz/300x300',
-    'https://source.unsplash.com/random/?programming',
-    'https://source.unsplash.com/random/300x300/?programming'
-  ];
-  final pb = 'http://121.130.161.155';
-  // PocketBase(dotenv.env['POCKETBASE_LINK'].toString());
 
   @override
   void onInit() {

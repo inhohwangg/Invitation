@@ -1,11 +1,9 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'register_controller.dart';
+import '../widget/global.dart';
 
 class InitialPageController extends GetxController {
-  String baseUrl = 'http://121.130.161.155';
   // dotenv.env['POCKETBASE_LINK'].toString();
   RxList imageArray = [].obs;
 

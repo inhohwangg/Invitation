@@ -127,12 +127,12 @@ class _RegisterPageState extends State<RegisterPage> {
               // ),
               GestureDetector(
                 onTap: () {
-                  // Get.to(RegisterSuccessPage());
-                  controller.register(
-                    registerName.text,
-                    registerUserId.text,
-                    registerPassword.text,
-                  );
+                  Get.to(RegisterSuccessPage());
+                  // controller.register(
+                  //   registerName.text,
+                  //   registerUserId.text,
+                  //   registerPassword.text,
+                  // );
                 },
                 child: Container(
                   decoration: BoxDecoration(

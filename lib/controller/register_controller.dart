@@ -10,12 +10,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:pocketbase/pocketbase.dart';
 
-Dio dio = Dio(BaseOptions(
-  contentType: Headers.formUrlEncodedContentType,
-  validateStatus: (status) => true,
-));
-
-final pb = PocketBase('http://121.130.161.155');
+import '../widget/global.dart';
 
 class RegisterController extends GetxController {
   @override
@@ -59,7 +54,6 @@ class RegisterController extends GetxController {
 
   // 로그인 기능
   login(userId, password) async {
-    print('?!');
     try {
       final res = await pb.collection('users').authWithPassword(
             userId,
